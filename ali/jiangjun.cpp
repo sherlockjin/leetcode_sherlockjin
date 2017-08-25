@@ -1,10 +1,4 @@
-#include <iostream>  
-#include <vector>  
-#include <numeric>  
-#include <limits> 
-#include <math.h>
-
-using namespace std;
+#include"common.h"
 
 class Jiangjun{
 	struct Point {      // 定义点类型  
