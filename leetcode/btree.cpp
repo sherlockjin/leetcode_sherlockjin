@@ -1,0 +1,292 @@
+#include"common.h"
+
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+class SolutionStack {
+public:
+	
+	void test(){
+		TreeNode* root = NULL;
+		vector<int> result;
+		createTree(root);
+		result = postorderTraversal3(root);
+		for (int i = 0; i < result.size(); i++){
+			cout << result[i] << ",";
+		}
+	}
+
+	//根据输入创建树
+ 	void createTree(TreeNode* &root){
+		char c;
+		if ((c = getchar()) == '#'){
+			root = NULL;
+		}
+		else{
+			root = (TreeNode*)malloc(sizeof(TreeNode));
+			root->val = c;
+			createTree(root->left);
+			createTree(root->right);
+		}
+	}
+
+	//根据后缀和中缀创建树
+	void createTree(TreeNode* &root,string post, string in){
+		if (post.empty())
+		{
+			return;
+		}
+		char temp = *(post.end() - 1);
+		int pos = in.find(temp);
+		root = (TreeNode *)malloc(sizeof(TreeNode));
+		root->val = temp;
+		root->left = root->right = NULL;
+		string pl, pr, il, ir;
+		il = in.substr(0, pos);
+		ir = in.substr(pos + 1);
+		pl = post.substr(0, pos);
+		pr = post.substr(pos, ir.size());
+		createTree(root->left, pl, il);
+		createTree(root->right, pr, ir);
+	}
+	
+	//层次遍历
+	void cengci(TreeNode* root){
+		queue<TreeNode*> q;
+		TreeNode *p = root;
+		q.push(p);
+
+		while (!q.empty())
+		{
+			p = q.front();
+			cout << p->val;
+			q.pop();
+			if (p->left != NULL)
+			{
+				q.push(p->left);
+			}
+			if (p->right != NULL)
+			{
+				q.push(p->right);
+			}
+			//q.pop();
+
+		}
+	}
+
+	//递归
+	void preHelper(TreeNode* root, vector<int>& result){
+		if (!root){
+			result.push_back(root->val);
+			preHelper(root->left, result);
+			preHelper(root->right, result);
+		}
+	}
+	void inHelper(TreeNode* root, vector<int>& result){
+		if (!root){
+			inHelper(root->left, result);
+			result.push_back(root->val);
+			inHelper(root->right, result);
+		}
+	}
+	void postHelper(TreeNode* root, vector<int>& result){
+		if (!root){
+			postHelper(root->left, result);
+			postHelper(root->right, result);
+			result.push_back(root->val);
+		}
+	}
+
+	vector<int> postorderTraversal(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		postHelper(root, result);
+		return result;
+	}
+
+
+	//迭代方法1  前序可以，后序不好
+	vector<int> preorderTraversal1(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		st.push(root);
+		while (!st.empty())
+		{
+			TreeNode* temp = st.top();
+			result.push_back(temp->val);
+			st.pop();
+			if (temp->right){
+				st.push(temp->right);
+			}
+			if (temp->left){
+				st.push(temp->left);
+			}
+		}
+		return result;
+	}
+	vector<int> postorderTraversal1(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		st.push(root);
+		while (!st.empty())
+		{
+			TreeNode* temp = st.top();
+			result.insert(result.begin(), temp->val);
+			st.pop();
+			if (temp->left){
+				st.push(temp->left);
+			}
+			if (temp->right){
+				st.push(temp->right);
+			}
+		}
+		return result;
+	}
+
+	 
+	//迭代方法2 前序和中序比较好，后序不好
+	vector<int> inorderTraversal2(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		TreeNode* cur = root;
+		while (!st.empty() || cur)
+		{
+			if (cur){
+				st.push(cur);
+				cur = cur->left; //左分支一直向下
+			}
+			else{
+				cur = st.top();
+				st.pop();
+				result.push_back(cur->val);// Add after all left children
+				cur = cur->right;
+
+			}
+		}
+		return result;
+	}
+	vector<int> preorderTraversal2(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		TreeNode* cur = root;
+		while (!st.empty() || cur)
+		{
+			if (cur){
+				st.push(cur);
+				result.push_back(cur->val);
+				cur = cur->left; // Add before going to children
+			}
+			else{
+				cur = st.top();
+				st.pop();
+				cur = cur->right;
+
+			}
+		}
+		return result;
+	}
+	vector<int> postorderTraversal2(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		TreeNode* cur = root;
+		while (!st.empty() || cur)
+		{
+			if (cur){
+				st.push(cur);
+				result.insert(result.begin(), cur->val);
+				cur = cur->right; //右分支一直向下
+			}
+			else{
+				cur = st.top();
+				st.pop();
+				cur = cur->left;
+
+			}
+		}
+		return result;
+	}
+
+	//迭代方法3  后序好
+	vector<int> postorderTraversal3(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		TreeNode* cur = root;
+		TreeNode* last = NULL;
+		st.push(root);
+		while (!st.empty())
+		{
+			cur = st.top();
+			if ((cur->left == NULL && cur->right == NULL)
+				|| (last != NULL && (last == cur->right || last == cur->right)))
+			{
+				result.push_back(cur->val);
+				last = cur;
+				st.pop();
+			}
+			else{
+				if (cur->right != NULL){
+					st.push(cur->right);
+				}
+				if (cur->right != NULL){
+					st.push(cur->right);
+				}
+			}
+
+		}
+		return result;
+	}
+
+
+	//迭代方法4  后序好
+	vector<int> postorderTraversal4(TreeNode* root){
+		if (!root){
+			return{};
+		}
+		vector<int> result;
+		stack<TreeNode*> st;
+		TreeNode* cur = root;
+		TreeNode* last = NULL;
+		while (!st.empty() || cur){
+			if (cur){
+				st.push(cur);
+				cur = cur->left;
+			}
+			else{
+				cur = st.top();
+				if (cur->right&&cur->right != last){
+					cur = cur->right;
+				}
+				else{
+					result.push_back(cur->val);
+					last = cur;
+					st.pop();
+					cur = NULL;
+				}
+			}
+		}
+		return result;
+	}
+};
