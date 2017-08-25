@@ -36,9 +36,6 @@
     <ClCompile Include="sushu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="jiangjun.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="01bag.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

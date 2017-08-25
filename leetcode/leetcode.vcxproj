@@ -148,7 +148,6 @@
   <ItemGroup>
     <ClCompile Include="01bag.cpp" />
     <ClCompile Include="eightqueen.cpp" />
-    <ClCompile Include="jiangjun.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="array.cpp" />
     <ClCompile Include="shoot.cpp" />
