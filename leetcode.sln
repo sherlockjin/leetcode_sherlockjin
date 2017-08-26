@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode", "leetcode\leetcode.vcxproj", "{D6A96B26-8853-4752-8937-48B26CD902A7}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wangyi", "wangyi\wangyi.vcxproj", "{A63ED5E9-0F28-43B4-A704-680C508F6C43}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ali", "ali\ali.vcxproj", "{D69B60E5-C175-4812-9CFE-E2D28D2C296A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "didi", "didi\didi.vcxproj", "{686CFAD8-5D06-461B-A196-C16FDD73DDAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,20 @@ Global
 		{D69B60E5-C175-4812-9CFE-E2D28D2C296A}.Release|x64.ActiveCfg = Release|Win32
 		{D69B60E5-C175-4812-9CFE-E2D28D2C296A}.Release|x86.ActiveCfg = Release|Win32
 		{D69B60E5-C175-4812-9CFE-E2D28D2C296A}.Release|x86.Build.0 = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|Win32.Build.0 = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|x64.ActiveCfg = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|x86.ActiveCfg = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Debug|x86.Build.0 = Debug|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|Win32.ActiveCfg = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|Win32.Build.0 = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|x64.ActiveCfg = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|x86.ActiveCfg = Release|Win32
+		{686CFAD8-5D06-461B-A196-C16FDD73DDAF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
