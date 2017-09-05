@@ -5,6 +5,7 @@ struct TreeNode {
 	TreeNode *left;
 	TreeNode *right;
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+	
 };
 class SolutionStack {
 public:
@@ -289,4 +290,31 @@ public:
 		}
 		return result;
 	}
+	/*
+	* 将二叉树转换成双向链表:直接在树上改动（后序遍历）
+	*/
+	 TreeNode* change_Linkedlist(TreeNode* root){
+		//首先考虑的是特殊情况，也就是递归的结束条件
+		if (root == NULL){
+			 return root;
+		}
+		TreeNode* last = NULL;
+		convert(root, last);
+		while (root->left != NULL){
+			root = root->left;
+		}
+		return root;
+	}
+	 void convert(TreeNode* root, TreeNode* &last){
+		 if (root == NULL){
+			 return;
+		 }
+		 convert(root->left, last);
+		 root->left = last;
+		 if (last != NULL){
+			 last->right = root;
+		 }
+		 last = root;
+		 convert(root->right, last);
+	 }
 };

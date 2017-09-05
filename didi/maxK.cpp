@@ -29,7 +29,8 @@ class MaxK{
 			return -1;
 		if (n<k)
 			return -1;
-		mid = random_partion(p, n);   //对原数组进行一次划分  
+		//mid = random_partion(p, n);   //对原数组进行一次划分  
+		mid = random_partion(p, n,0,n-1);   //对原数组进行一次划分
 		if (mid == n - k)      //如果mid==n-k，那么返回该值，这就是第k大的数  
 			return p[mid];
 		else if (mid<n - k)
@@ -37,7 +38,30 @@ class MaxK{
 		else
 			return getMaxK(p, mid, k - (n - mid));   //如果mid>n-k，那么第k大的数在左半数组，且在左半数组中是第k-(n-mid)大的数  
 	}
-
+	int random_partion(int *p, int n, int start, int end){
+		int i = start, j = end;
+		int index = rand() % n;
+		int x = p[index];
+		p[index] = p[end];
+		while (i < j){
+			while (i < j && p[i] <= x){
+				i++;
+			}
+			if (i < j){
+				p[j] = p[i];
+				j--;
+			}
+			while (i < j && p[j] >= x){
+				j--;
+			}
+			if (i < j){
+				p[i] = p[j];
+				i++;
+			}
+		}
+		p[i] = x;
+		return i;
+	}
 	int test()
 	{
 		int k;

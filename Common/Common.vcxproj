@@ -79,8 +79,10 @@
     <ClInclude Include="common.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="BTree.cpp" />
     <ClCompile Include="lianbiao.cpp" />
+    <ClCompile Include="LSC.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matchstr.cpp" />
     <ClCompile Include="sort.cpp" />

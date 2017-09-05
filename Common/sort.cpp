@@ -48,6 +48,7 @@ public:
 	//	return 0;
 	//}
 
+	
 	void bubbleSort(int s[], int length)
 	{
 		int flag = 0;
@@ -104,7 +105,9 @@ public:
 	{
 		if (begin < end) {
 			int i = begin, j = end;
-			int temp = s[i];
+			int index = rand() / (end - begin + 1);
+			int temp = s[index];
+			s[index] = s[i];
 			while (i < j) {
 				while (i < j && s[j] >= temp)
 				{
@@ -137,9 +140,9 @@ public:
 		heapBuild(s, length);
 		for (int i = length - 1; i >= 0; i--)
 		{
-			for (int i = 0; i < length; i++)
+			for (int j = 0; j < length; j++)
 			{
-				cout << s[i] << ' ';
+				cout << s[j] << ' ';
 			}
 			cout << endl;
 			swap(s[0], s[i]);
