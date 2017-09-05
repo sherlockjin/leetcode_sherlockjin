@@ -291,7 +291,7 @@ public:
 		return result;
 	}
 	/*
-	* 将二叉树转换成双向链表:直接在树上改动（后序遍历）
+	* 将二叉树转换成双向链表:直接在树上改动（中序遍历）
 	*/
 	 TreeNode* change_Linkedlist(TreeNode* root){
 		//首先考虑的是特殊情况，也就是递归的结束条件

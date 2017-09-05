@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="BTree.cpp" />
+    <ClCompile Include="largeNum.cpp" />
     <ClCompile Include="lianbiao.cpp" />
     <ClCompile Include="LSC.cpp" />
     <ClCompile Include="main.cpp" />

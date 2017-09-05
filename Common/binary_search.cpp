@@ -38,9 +38,7 @@ public:
 		while (first <= last)
 		{
 			mid = first + (last - first) / 2;
-			if (b[mid] > w)
-				last = mid - 1;
-			else if (b[mid] < w)
+			if (b[mid] < w)
 				first = mid + 1;
 			else    //找到了该元素，则直接返回  
 			{
@@ -62,14 +60,11 @@ public:
 			mid = first + (last - first) / 2;
 			if (b[mid] > w)
 				last = mid - 1;
-			else if (b[mid] < w)
-				first = mid + 1;
 			else    //找到了该元素，则直接返回  
 			{
 				int r = rbs(b, mid+1, last, w);
 				if (r == -1){
-					r = mid;
-					
+					r = mid;	
 				}
 				return r;
 			}

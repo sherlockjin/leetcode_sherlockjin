@@ -7,6 +7,7 @@
 #include<vector>
 #include<stack>
 #include<queue>
+#include<string>
 using namespace std;
 
 //void dfsFind(Node *node, int dep, int counter[]){
