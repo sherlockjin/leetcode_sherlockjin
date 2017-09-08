@@ -40,7 +40,7 @@ class MaxK{
 	}
 	int random_partion(int *p, int n, int start, int end){
 		int i = start, j = end;
-		int index = rand() % n;
+		int index = rand() % n+start;
 		int x = p[index];
 		p[index] = p[end];
 		while (i < j){

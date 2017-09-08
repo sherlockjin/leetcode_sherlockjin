@@ -87,6 +87,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matchstr.cpp" />
     <ClCompile Include="sort.cpp" />
+    <ClCompile Include="中缀转后缀.cpp" />
+    <ClCompile Include="数学表达式求值.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

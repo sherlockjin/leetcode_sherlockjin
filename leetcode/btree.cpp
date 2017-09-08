@@ -14,7 +14,7 @@ public:
 		TreeNode* root = NULL;
 		vector<int> result;
 		createTree(root);
-		result = postorderTraversal3(root);
+		result = postorderTraversal(root);
 		for (int i = 0; i < result.size(); i++){
 			cout << result[i] << ",";
 		}

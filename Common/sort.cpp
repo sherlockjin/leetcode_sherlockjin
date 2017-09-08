@@ -2,53 +2,51 @@
 class Sort
 {
 public:
-	//int test()
-	//{
-	//	//int origin[] = { 21,23,3,22,57,5 };
-	//	int origin[] = { 5, 4, 3, 2, 1 };
-	//	int s[10];
-	//	int length = sizeof(origin) / sizeof(int);
-	//	string type;
-	//	cout << "请输入排序类型：";
-	//	while (cin >> type)
-	//	{
-	//		if (type == "quickSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			quickSort(s, 0, length - 1);
-	//		}
-	//		if (type == "bubbleSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			bubbleSort(s, length);
-	//		}
-	//		if (type == "selectSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			selectSort(s, length);
-	//		}
-	//		if (type == "heapSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			heapSort(s, length);
-	//		}
-	//		if (type == "insertSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			insertSort(s, length);
-	//		}
-	//		if (type == "mergeSort") {
-	//			memcpy(s, origin, sizeof(origin));
-	//			mergeSort(s, 0, length - 1);
-	//		}
-	//		for (int i = 0; i < length; i++)
-	//		{
-	//			cout << s[i] << ' ';
-	//		}
-	//		cout << endl;
-	//		cout << "请输入排序类型：";
+	void test()
+	{
+		int origin[] = { 21,23,3,22,57,5 };
+		//int origin[] = { 5, 4, 3, 2, 1 };
+		int s[10];
+		int length = sizeof(origin) / sizeof(int);
+		string type;
+		cout << "请输入排序类型：";
+		while (cin >> type)
+		{
+			if (type == "quickSort") {
+				memcpy(s, origin, sizeof(origin));
+				quickSortBest(s, 0, length - 1);
+			}
+			if (type == "bubbleSort") {
+				memcpy(s, origin, sizeof(origin));
+				bubbleSort(s, length);
+			}
+			if (type == "selectSort") {
+				memcpy(s, origin, sizeof(origin));
+				selectSort(s, length);
+			}
+			if (type == "heapSort") {
+				memcpy(s, origin, sizeof(origin));
+				heapSort(s, length);
+			}
+			if (type == "insertSort") {
+				memcpy(s, origin, sizeof(origin));
+				insertSort(s, length);
+			}
+			if (type == "mergeSort") {
+				memcpy(s, origin, sizeof(origin));
+				mergeSort(s, 0, length - 1);
+			}
+			for (int i = 0; i < length; i++)
+			{
+				cout << s[i] << ' ';
+			}
+			cout << endl;
+			cout << "请输入排序类型：";
 
-	//	}
+		}
+	}
 
-	//	return 0;
-	//}
-
-	
+	//交换类排序  冒泡是稳定的，快速排序 不稳定的
 	void bubbleSort(int s[], int length)
 	{
 		int flag = 0;
@@ -63,41 +61,6 @@ public:
 				break;
 			}
 			flag = 0;
-		}
-	}
-
-	void selectSort(int s[], int length) {
-
-		for (int i = 0; i < length - 1; i++) {
-			int minPos = i;
-			for (int j = i + 1; j <= length - 1; j++) {
-				if (s[j] < s[minPos]) {
-					minPos = j;
-				}
-			}
-			if (i != minPos) {
-				swap(s[i], s[minPos]);
-			}
-		}
-	}
-
-	void insertSort(int s[], int length)
-	{
-		for (int i = 1; i < length; i++)
-		{
-			int temp = s[i];
-			int j;
-			for (j = i - 1; j >= 0; j--)
-			{
-				if (s[j] > temp)
-				{
-					s[j + 1] = s[j];
-				}
-				else {
-					break;
-				}
-			}
-			s[j + 1] = temp;
 		}
 	}
 
@@ -134,7 +97,115 @@ public:
 		}
 	}
 
+	//选择类排序 都是不稳定的， 简单选择排序和堆排序都不稳定
+	void selectSort(int s[], int length) {
 
+		for (int i = 0; i < length - 1; i++) {
+			int minPos = i;
+			for (int j = i + 1; j <= length - 1; j++) {
+				if (s[j] < s[minPos]) {
+					minPos = j;
+				}
+			}
+			if (i != minPos) {
+				swap(s[i], s[minPos]);
+			}
+		}
+	}
+
+	//插入类排序是稳定的，插入排序和希尔排序
+	void insertSort(int s[], int length)
+	{
+		for (int i = 1; i < length; i++)
+		{
+			int temp = s[i];
+			int j;
+			for (j = i - 1; j >= 0; j--)
+			{
+				if (s[j] > temp)
+				{
+					s[j + 1] = s[j];
+				}
+				else {
+					break;
+				}
+			}
+			s[j + 1] = temp;
+		}
+	}
+
+
+
+	//最好的快速排序
+	void insertSort(int s[], int begin, int end)
+	{
+		for (int i = begin+1; i <= end; i++)
+		{
+			int temp = s[i];
+			int j;
+			for (j = i - 1; j >= begin; j--)
+			{
+				if (s[j] > temp)
+				{
+					s[j + 1] = s[j];
+				}
+				else {
+					break;
+				}
+			}
+			s[j + 1] = temp;
+		}
+	}
+	void quickSortBest(int s[], int begin, int end)
+	{
+		if (begin >= end){
+			return;
+		}
+		if (end - begin + 1 < 10){
+			insertSort(s, begin,end);
+		}
+		else{
+			int index = partition(s, begin, end);
+			if (index > begin){
+				quickSortBest(s, begin, index - 1);
+			}
+			if (index < end){
+				quickSortBest(s, index + 1, end);
+			}
+		}
+		//以下是使用尾递归优化
+		/*else{
+			while (begin < end) {
+				int index = partition(s, begin, end);
+				if (index > begin){
+					quickSortBest(s, begin, index - 1);
+				}
+				begin = begin + 1;
+			}
+		}*/
+	}
+	int partition(int s[], int begin, int end){
+		if (begin >= end){
+			return begin;
+		}
+		int index = rand() / (end - begin + 1) + begin;
+		swap(s[begin], s[end]);
+		int small = begin - 1;
+		for (index = begin; index < end; index++){
+			if (s[index] < s[end]){
+				small++;
+				if (small != index){
+					swap(s[small], s[index]);
+				}
+			}
+		}
+		small++;
+		swap(s[small], s[end]);
+		return small;
+	}
+
+
+	//堆排序
 	void heapSort(int s[], int length)
 	{
 		heapBuild(s, length);
@@ -177,7 +248,7 @@ public:
 		}
 	}
 
-
+	//归并排序 是稳定的
 	void mergeSort(int s[], int begin, int end)
 	{
 		if (begin < end) {
@@ -212,4 +283,11 @@ public:
 		free(temp);
 	}
 
+	
+
 };
+//int main(){
+//	Sort s;
+//	s.test();
+//	return 0;
+//}
