@@ -24,6 +24,9 @@
     <ClCompile Include="cainiaocangku.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="jingdong.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\common.h">

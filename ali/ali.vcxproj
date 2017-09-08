@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="cainiaocangku.cpp" />
     <ClCompile Include="jiangjun.cpp" />
+    <ClCompile Include="jingdong.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
