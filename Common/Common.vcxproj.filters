@@ -44,10 +44,10 @@
     <ClCompile Include="largeNum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="数学表达式求值.cpp">
+    <ClCompile Include="C:\Users\sherlockjin\Documents\Tencent Files\381773619\FileRecv\括号匹配.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="中缀转后缀.cpp">
+    <ClCompile Include="爱奇艺.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -81,14 +81,14 @@
   <ItemGroup>
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="BTree.cpp" />
+    <ClCompile Include="C:\Users\sherlockjin\Documents\Tencent Files\381773619\FileRecv\括号匹配.cpp" />
     <ClCompile Include="largeNum.cpp" />
     <ClCompile Include="lianbiao.cpp" />
     <ClCompile Include="LSC.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matchstr.cpp" />
     <ClCompile Include="sort.cpp" />
-    <ClCompile Include="中缀转后缀.cpp" />
-    <ClCompile Include="数学表达式求值.cpp" />
+    <ClCompile Include="爱奇艺.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
