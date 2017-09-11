@@ -1,10 +1,10 @@
 #include"common.h"
 #define M 1010
-class lcs{
+class LCS{
 public:
 
-	
-	int LCS2(char s1[], char s2[])
+	//用滚动数组模拟动态规划
+	int lcsWithRollArray(char s1[], char s2[])
 	{
 		int len1 = strlen(s1);
 		const int len2 = strlen(s2);
@@ -30,7 +30,9 @@ public:
 		return dp[!rowFlag][len2];
 
 	}
-	int LCS(char s1[], char s2[])
+	
+	//用1维数组，貌似不正确
+	int lcsOneArray(char s1[], char s2[])
 	{
 		int len1 = strlen(s1), len2 = strlen(s2);
 
@@ -113,6 +115,7 @@ public:
 
 
 	}
+	
 	int lcsNlogN(char* s1, char* s2){
 		map<char, vector<int>> myMap;
 		int len1 = strlen(s1), len2 = strlen(s2);
@@ -169,6 +172,8 @@ public:
 
 		return len;
 	}
+	
+	
 	int test()
 	{
 		char str1[M], str2[M];
@@ -180,7 +185,7 @@ public:
 		scanf("%s", str2);
 		printf("所求长度为:");
 
-		printf("%d\n", LCS2(str1, str2));
+		printf("%d\n", lcsWithRollArray(str1, str2));
 		return 0;
 
 	}
