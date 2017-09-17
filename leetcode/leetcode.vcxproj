@@ -151,7 +151,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="array.cpp" />
     <ClCompile Include="shoot.cpp" />
-    <ClCompile Include="btree.cpp" />
     <ClCompile Include="string.cpp" />
     <ClCompile Include="substr.cpp" />
     <ClCompile Include="sushu.cpp" />

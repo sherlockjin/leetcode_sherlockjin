@@ -161,9 +161,9 @@ public:
 		if (begin >= end){
 			return;
 		}
-		if (end - begin + 1 < 10){
+		/*if (end - begin + 1 < 10){
 			insertSort(s, begin,end);
-		}
+		}*/
 		else{
 			int index = partition(s, begin, end);
 			if (index > begin){
@@ -189,18 +189,17 @@ public:
 			return begin;
 		}
 		int index = rand() / (end - begin + 1) + begin;
-		swap(s[begin], s[end]);
-		int small = begin - 1;
-		for (index = begin; index < end; index++){
-			if (s[index] < s[end]){
+		swap(s[begin], s[index]);
+		int small = begin;
+		for (index = begin+1; index <= end; index++){
+			if (s[index] < s[begin]){
 				small++;
 				if (small != index){
 					swap(s[small], s[index]);
 				}
 			}
 		}
-		small++;
-		swap(s[small], s[end]);
+		swap(s[small], s[begin]);
 		return small;
 	}
 
@@ -283,6 +282,8 @@ public:
 		free(temp);
 	}
 
+
+	
 	
 
 };

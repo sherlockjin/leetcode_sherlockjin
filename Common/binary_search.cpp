@@ -2,6 +2,8 @@
 
 class BinarySearch{
 public:
+
+	//二分查找，循环
 	int binarySearchWithLoop(int *b, int first, int last, int w)
 	{
 		
@@ -19,6 +21,8 @@ public:
 		}
 		return -1;
 	}
+
+	//二分查找，递归
 	int binarySearch(int *b, int first, int last, int w)
 	{
 
@@ -37,6 +41,8 @@ public:
 		
 		return -1;
 	}
+
+	//有多个相同的数
 	void binarySearchWithDup(int *b, int first, int last, int w)
 	{
 		int mid;
@@ -113,4 +119,43 @@ public:
 
 	}
 
+	//两个排序数组找第k小的数
+	int find_kth(int A[], int m, int B[], int n, int k){
+		if (m > n)
+			return find_kth(B, n, A, m, k);
+		if (m == 0)
+			return B[k - 1];
+		if (k == 1)
+			return min(A[0], B[0]);
+
+		int ia = min(k / 2, m);
+		int ib = k - ia;
+		if (A[ia - 1] < B[ib - 1]){
+			return find_kth(A + ia, m - ia, B, n, k - ia);
+		}
+		else if (A[ia - 1] > B[ib - 1]){
+			return find_kth(A, m, B + ib, n - ib, k - ib);
+		}
+		else{
+			return A[ia - 1];
+		}
+	}
+
+	void testFindKth(){
+		int a[] = { 1, 2, 3, 4};
+		int b[] = { 1, 2, 3, 4, 5 };
+		int k;
+		while (cin >> k){
+			int res = find_kth(a, 4, b, 5, k);
+			cout << res << endl;
+		}
+		
+	}
+
 };
+
+//int main()
+//{
+//	BinarySearch bs;
+//	bs.testFindKth();
+//}

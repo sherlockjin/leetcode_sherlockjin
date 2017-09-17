@@ -27,8 +27,3 @@ public:
 	}
 
 };
-
-int main()
-{
-	
-}
