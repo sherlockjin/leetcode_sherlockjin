@@ -81,14 +81,14 @@ CExample ret_fun()
 	cout << "return : CExample" << endl;
 	return temp;
 }
-int main()
-{
-	CExample A(1);
-	//arg_fun(A);   //按值传递将出错
-	ret_fun();
-	A.Show();
-	return 0;
-}
+//int main()
+//{
+//	CExample A(1);
+//	//arg_fun(A);   //按值传递将出错
+//	ret_fun();
+//	A.Show();
+//	return 0;
+//}
 
 /*
 (1).A对象传入形参时，会先会产生一个临时变量，就叫 C 吧。
