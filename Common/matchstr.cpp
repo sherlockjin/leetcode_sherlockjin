@@ -30,6 +30,8 @@ public:
 			}
 			if (*q == '\0')
 			{
+				cout << p - text << endl;
+				cout << q - find << endl;
 				return (p - text) - (q - find);
 			}
 		}
@@ -209,30 +211,36 @@ public:
 
 	}
 
-	//int main(){
-	//	int t;
-	//	scanf("%d\n", &t);
-	//	for (int i = 0; i < t; i++){
-	//		gets(buff);
-	//		int len = strlen(buff);
-	//		for (int j = len; j >= 0; j--){
-	//			if (buff[j] == ' '){
-	//				buff[j] = '\0';
-	//				for (int k = 0; k <= len - j; k++){
-	//					pattern[k] = buff[k + j + 1];
-	//				}
-	//				// value = bf(buff, pattern);
-	//				//printf("%s\n%s\n",buff,pattern);
-	//				//printf("%d\n", kmp(buff, pattern));
-	//				kmp2(buff, pattern);
-	//				
-	//				break;
-	//			}
-	//			
-	//		}
-	//		//printf("%s\n", buff);
-	//	}
-	//	return 0;
-	//}
+	int test(){
+		int t;
+		scanf("%d\n", &t);
+		for (int i = 0; i < t; i++){
+			gets(buff);
+			int len = strlen(buff);
+			for (int j = len; j >= 0; j--){
+				if (buff[j] == ' '){
+					buff[j] = '\0';
+					for (int k = 0; k <= len - j; k++){
+						pattern[k] = buff[k + j + 1];
+					}
+					int value = bf(buff, pattern);
+					cout << value << endl;
+					//printf("%s\n%s\n",buff,pattern);
+					//printf("%d\n", kmp(buff, pattern));
+					//kmp(buff, pattern);
+
+					break;
+				}
+
+			}
+			//printf("%s\n", buff);
+		}
+		return 0;
+	}
 
 };
+//int main()
+//{
+//	StrMATCH s;
+//	s.test();
+//}

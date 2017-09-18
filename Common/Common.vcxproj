@@ -87,6 +87,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matchstr.cpp" />
     <ClCompile Include="sort.cpp" />
+    <ClCompile Include="小米.cpp" />
     <ClCompile Include="搜狐.cpp" />
     <ClCompile Include="爱奇艺.cpp" />
     <ClCompile Include="百度.cpp" />
