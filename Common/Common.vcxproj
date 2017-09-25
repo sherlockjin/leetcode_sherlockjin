@@ -91,6 +91,7 @@
     <ClCompile Include="搜狐.cpp" />
     <ClCompile Include="爱奇艺.cpp" />
     <ClCompile Include="百度.cpp" />
+    <ClCompile Include="网易.cpp" />
     <ClCompile Include="语法.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

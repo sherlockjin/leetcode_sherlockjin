@@ -82,21 +82,22 @@ int LCSE(char s1[], char s2[])
 
 }
 
-const int N = 111111;
-ll a[N];
 
-int main() {
-	int n;
-	while (cin >> n) {
-		a[0] = 1;
-		a[1] = 1;
-		for (int i = 2; i <= n; i++) {
-			a[i] = a[i - 1] + a[i - 2];
-		}
-		cout << a[n] << endl;
-	}
-	return 0;
-}
+const int N = 111111;
+long long  a[N];
+
+//int main() {
+//	int n;
+//	while (cin >> n) {
+//		a[0] = 1;
+//		a[1] = 1;
+//		for (int i = 2; i <= n; i++) {
+//			a[i] = a[i - 1] + a[i - 2];
+//		}
+//		cout << a[n] << endl;
+//	}
+//	return 0;
+//}
 
 //int main()
 //{
@@ -169,9 +170,9 @@ string func(ll x)
 	return result;
 }
 
-int main()
-{
-	ll n;
-	cin >> n;
-	cout << func(n) << endl;
-}
+//int main()
+//{
+//	ll n;
+//	cin >> n;
+//	cout << func(n) << endl;
+//}
