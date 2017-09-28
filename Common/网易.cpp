@@ -180,32 +180,32 @@ int combinator(int n, int m)
 }
 
 
-int main()
-{
-	int s, a, b, c;
-	cin >> s >> a >> b >> c;
-	if (s > a + b + c)
-	{
-		cout << 0 << endl;
-		return 0;
-	}
-
-	int minV = min(a, b, c);
-	if (minV > s)
-	{
-		cout << 0 << endl;
-		return 0;
-	}
-	if (a + b + c == s)
-	{
-		cout << recv(s) << endl;
-		return 0;
-	}
-	if (s == 3 && a == 3 && b == 1 && c == 1)
-	{
-		cout << 9 << endl;
-		return 0;
-	}
-	cout << combinator(s, a)*combinator(s, b)*combinator(s, c) << endl;
-	return 0;
-}
+//int main()
+//{
+//	int s, a, b, c;
+//	cin >> s >> a >> b >> c;
+//	if (s > a + b + c)
+//	{
+//		cout << 0 << endl;
+//		return 0;
+//	}
+//
+//	int minV = min(a, b, c);
+//	if (minV > s)
+//	{
+//		cout << 0 << endl;
+//		return 0;
+//	}
+//	if (a + b + c == s)
+//	{
+//		cout << recv(s) << endl;
+//		return 0;
+//	}
+//	if (s == 3 && a == 3 && b == 1 && c == 1)
+//	{
+//		cout << 9 << endl;
+//		return 0;
+//	}
+//	cout << combinator(s, a)*combinator(s, b)*combinator(s, c) << endl;
+//	return 0;
+//}

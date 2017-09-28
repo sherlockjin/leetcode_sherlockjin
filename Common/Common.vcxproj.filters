@@ -65,5 +65,14 @@
     <ClCompile Include="百度北京.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="序列合并.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="双素数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="搜狗.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
