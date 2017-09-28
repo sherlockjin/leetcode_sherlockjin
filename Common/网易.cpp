@@ -179,7 +179,7 @@ int combinator(int n, int m)
 	return factorial(n) / (factorial(m)*factorial(n - m));
 }
 
-//
+
 //int main()
 //{
 //	int s, a, b, c;
