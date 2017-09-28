@@ -9,8 +9,27 @@
 #include<string>
 using namespace std;
 
-
-int main()
+class A
 {
-	return 0;
-}
+	int _a;
+public:
+	A(int a) :_a(a)
+	{
+
+	}
+	friend int f1(A&);
+	friend int f2(const A&);
+	friend int f3(A);
+	friend int f4(const A);
+};
+//int main()
+//{
+//	A b(3);
+//	
+//	//f1(0);
+//	f2(0);
+//	f3(0);
+//	f4(0);
+//
+//	return 0;
+//}
