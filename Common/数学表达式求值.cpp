@@ -142,20 +142,20 @@ public:
 };
 
 
-//int main(){
-//	CalValue calValue;
-//	char expression[100];
-//	//string s1,s2;
-//	//cin >> s1 >> s2;
-//	//int i = stoi(s1); 等价于 atoi(s.c_str())
-//	//int j = stoi(s2);
-//	//cout << i+j << endl;
-//	while (gets(expression) != NULL){
-//		if (strcmp(expression, "end") == 0){
-//			return 0;
-//		}
-//		int value = calValue.caculate(expression);
-//		cout << "result = " << value << endl;
-//	}
-//	return 0;
-//}
+int main(){
+	CalValue calValue;
+	char expression[100];
+	//string s1,s2;
+	//cin >> s1 >> s2;
+	//int i = stoi(s1); 等价于 atoi(s.c_str())
+	//int j = stoi(s2);
+	//cout << i+j << endl;
+	while (gets(expression) != NULL){
+		if (strcmp(expression, "end") == 0){
+			return 0;
+		}
+		int value = calValue.caculate(expression);
+		cout << "result = " << value << endl;
+	}
+	return 0;
+}
