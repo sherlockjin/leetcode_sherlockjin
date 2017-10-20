@@ -74,5 +74,11 @@
     <ClCompile Include="搜狗.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="中缀转后缀.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="数学表达式求值.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

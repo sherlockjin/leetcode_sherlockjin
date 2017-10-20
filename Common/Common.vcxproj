@@ -87,11 +87,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matchstr.cpp" />
     <ClCompile Include="sort.cpp" />
+    <ClCompile Include="中缀转后缀.cpp" />
     <ClCompile Include="双素数.cpp" />
     <ClCompile Include="小米.cpp" />
     <ClCompile Include="序列合并.cpp" />
     <ClCompile Include="搜狐.cpp" />
     <ClCompile Include="搜狗.cpp" />
+    <ClCompile Include="数学表达式求值.cpp" />
     <ClCompile Include="爱奇艺.cpp" />
     <ClCompile Include="百度.cpp" />
     <ClCompile Include="百度北京.cpp" />
